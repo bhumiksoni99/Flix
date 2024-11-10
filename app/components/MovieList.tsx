@@ -86,13 +86,16 @@ export default function MovieList({
   const renderMovieCard = (movie: Movie, i: number) => {
     return (
       <div
-        className={`z-10 flex flex-col pb-10 transform rounded-lg hover:scale-125 transition duration-200 hover:z-20 cursor-pointer relative ${
+        className={`z-10 relative flex flex-col transform rounded-lg hover:scale-125 transition duration-200 hover:z-20 cursor-pointer relative ${
           i % 2 == 0 ? `origin-bottom-left` : `origin-right`
         } group`}
         key={i}
       >
-        <img src={movie.thumbnailUrl} className="object-fill h-[12vw]" />
-        <div className="absolute -bottom-20 w-full flex-col bg-zinc-800 p-4 hidden group-hover:flex duration-200 transition">
+        <img
+          src={movie.thumbnailUrl}
+          className="object-fill w-full h-[80%] md:h-[12vw]"
+        />
+        <div className="absolute w-full flex-col bg-zinc-800 p-4 hidden group-hover:flex duration-200 transition top-[12vw]">
           <div className="flex flex-row justify-between">
             <div className="flex flex-row">
               <div
@@ -144,10 +147,10 @@ export default function MovieList({
   };
   return (
     <>
-      <div className="-mt-10 px-8 py-4">
+      <div className="px-8 py-2">
         <Toaster />
         <div className="text-3xl text-white font-semibold">{title}</div>
-        <div className="flex w-full mt-4 gap-4">
+        <div className="flex w-full mt-4 gap-4 grid grid-cols-2 md:grid-cols-4">
           {data?.movies.map((movie: Movie, i: number) =>
             renderMovieCard(movie, i)
           )}

@@ -23,7 +23,7 @@ const BillBoard: React.FC = () => {
   const movie = data.movies[randomIdx];
   return (
     <>
-      <div className="relative h-screen">
+      <div className="relative mb-2">
         <video
           poster={movie.thumbnailUrl}
           autoPlay
