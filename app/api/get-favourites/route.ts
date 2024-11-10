@@ -4,7 +4,7 @@ import prismadb from "../../../lib/prismadb";
 
 export async function GET(req: NextRequest) {
   try {
-    const { currentUser } = await serverAuth(req);
+    const { currentUser } = await serverAuth();
     const user = await prismadb.user.findUnique({
       where: {
         id: currentUser.id,

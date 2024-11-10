@@ -4,8 +4,7 @@ import prismadb from "./prismadb";
 import { NextRequest } from "next/server";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 
-const serverAuth = async (req: NextRequest) => {
-  console.log("as", req);
+const serverAuth = async () => {
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) {
     throw new Error("Not signed in");

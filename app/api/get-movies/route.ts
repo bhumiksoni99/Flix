@@ -4,7 +4,6 @@ import prismadb from "../../../lib/prismadb";
 export async function GET() {
   try {
     const movies = await prismadb.movie.findMany();
-    console.log("as", movies);
     return NextResponse.json({ movies }, { status: 200 });
   } catch (e) {
     return NextResponse.json(

@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
   try {
     const { movieId } = await req.json();
 
-    const { currentUser } = await serverAuth(req);
+    const { currentUser } = await serverAuth();
 
     await prismadb.user.update({
       where: {
@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 export async function DELETE(req: NextRequest) {
   try {
     const { movieId } = await req.json();
-    const { currentUser } = await serverAuth(req);
+    const { currentUser } = await serverAuth();
 
     const user = await prismadb.user.findUnique({
       where: { id: currentUser.id },
