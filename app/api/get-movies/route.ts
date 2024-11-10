@@ -6,9 +6,9 @@ export async function GET() {
     const movies = await prismadb.movie.findMany();
     console.log("as", movies);
     return NextResponse.json({ movies }, { status: 200 });
-  } catch {
+  } catch (e) {
     return NextResponse.json(
-      { message: "Something went wrong" },
+      { message: "Something went wrong", error: JSON.stringify(e) },
       { status: 405 }
     );
   }
