@@ -1,5 +1,4 @@
 "use client";
-import InfoModal from "@/app/components/InfoModal";
 import useOneMovie from "@/hooks/useOneMovie";
 import { redirect } from "next/navigation";
 import React, { use } from "react";

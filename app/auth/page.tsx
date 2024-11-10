@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
-export default function auth() {
+export default function Auth() {
   const router = useRouter();
 
   const nameRef = useRef<React.Reference | null>(null);

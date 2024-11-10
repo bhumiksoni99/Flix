@@ -1,11 +1,7 @@
 import Navbar from "./components/Navbar";
-import User from "./components/User";
 import withAuth from "./components/withAuth";
-import axios from "axios";
 import BillBoard from "./components/BillBoard";
-import MovieList from "./components/MovieList";
 import AllMovieLists from "./components/AllMovieLists";
-import InfoModal from "./components/InfoModal";
 
 async function Home() {
   // const uploadMovies = async () => {

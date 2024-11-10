@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest } from "next";
 
 import serverAuth from "@/lib/serverAuth";
 import { NextResponse } from "next/server";

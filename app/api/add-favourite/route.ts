@@ -1,9 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
-
 import serverAuth from "@/lib/serverAuth";
 import { NextRequest, NextResponse } from "next/server";
 import prismadb from "../../../lib/prismadb";
-import { getSession } from "next-auth/react";
 
 export async function POST(req: NextRequest) {
   try {

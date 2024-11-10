@@ -17,7 +17,7 @@ export async function GET(req: NextRequest) {
       },
     });
     return NextResponse.json({ movies }, { status: 200 });
-  } catch (e) {
+  } catch {
     return NextResponse.json(
       { message: "Something went wrong" },
       { status: 405 }

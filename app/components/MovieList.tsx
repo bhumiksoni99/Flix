@@ -1,17 +1,13 @@
 "use client";
-import useCurrentUser from "@/hooks/useCurrentUser";
-import useFavourites from "@/hooks/useFavourites";
-import useMovies from "@/hooks/useMovies";
 import axios from "axios";
 import { redirect } from "next/navigation";
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { FaPlay } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import { FaCheck } from "react-icons/fa6";
-import { useRouter } from "next/router";
 import InfoModal from "./InfoModal";
 
 interface Movie {
@@ -55,12 +51,12 @@ export default function MovieList({
 
   const addFavourite = async (movieId: string) => {
     try {
-      const res = await axios.post("/api/add-favourite", {
+      await axios.post("/api/add-favourite", {
         movieId,
       });
       onFavouritesChanged();
       toast.success("Added to your list!");
-    } catch (e) {
+    } catch {
       onFavouritesChanged();
       toast.error("Unable to add this movie to favourites", {
         position: "bottom-center",
@@ -70,12 +66,12 @@ export default function MovieList({
 
   const removeFromFavourites = async (movieId: string) => {
     try {
-      const res = await axios.delete("/api/add-favourite", {
+      await axios.delete("/api/add-favourite", {
         data: { movieId },
       });
       toast.success("Removed from your list!");
       onFavouritesChanged();
-    } catch (e) {
+    } catch {
       toast.error("Unable to add this movie to favourites", {
         position: "bottom-center",
       });

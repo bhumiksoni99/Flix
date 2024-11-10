@@ -1,11 +1,11 @@
 "use client";
 import useFavourites from "@/hooks/useFavourites";
 import useMovies from "@/hooks/useMovies";
-import React, { useCallback } from "react";
+import React from "react";
 import MovieList from "./MovieList";
 
 export default function AllMovieLists() {
-  const { data, isLoading, mutate } = useMovies();
+  const { data, isLoading } = useMovies();
   const {
     data: favs,
     isLoading: favsLoading,

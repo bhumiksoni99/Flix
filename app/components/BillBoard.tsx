@@ -6,16 +6,6 @@ import useMovies from "@/hooks/useMovies";
 import { useRouter } from "next/navigation";
 import InfoModal from "./InfoModal";
 
-interface Movie {
-  id: string;
-  title: string;
-  description: string;
-  videoUrl: string;
-  thumbnailUrl: string;
-  genre: string;
-  rating: string;
-}
-
 const BillBoard: React.FC = () => {
   const router = useRouter();
   const [visible, setVisible] = useState<boolean>(false);
