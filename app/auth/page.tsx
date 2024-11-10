@@ -8,8 +8,10 @@ import toast, { Toaster } from "react-hot-toast";
 import { signIn } from "next-auth/react";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 export default function Auth() {
+  const router = useRouter();
   const nameRef = useRef<HTMLInputElement | null>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -52,8 +54,11 @@ export default function Auth() {
       await signIn("credentials", {
         email: emailRef.current?.value,
         password: passwordRef.current?.value,
-        callbackUrl: "/profiles",
+        redirect: false,
+        callbackUrl: "/",
       });
+
+      router.push("/profiles");
     } catch (e) {
       console.log("as", e);
     }
