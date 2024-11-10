@@ -32,7 +32,7 @@ export default function MovieList({
   title: string;
   data: { movies: Movie[] };
   isLoading: boolean;
-  onFavouritesChanged: () => {};
+  onFavouritesChanged: () => void;
   favs?: boolean;
   favourites?: { movies: Movie[] };
 }) {

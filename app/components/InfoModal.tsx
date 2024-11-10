@@ -1,7 +1,7 @@
 "use client";
 import useFavourites from "@/hooks/useFavourites";
 import axios from "axios";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
 import { FaCheck, FaPlay, FaPlus } from "react-icons/fa";
@@ -52,11 +52,11 @@ export default function InfoModal({
 
   const addFavourite = async (movieId: string) => {
     try {
-      const res = await axios.post("/api/add-favourite", {
+      await axios.post("/api/add-favourite", {
         movieId,
       });
       toast.success("Added to your list!");
-    } catch (e) {
+    } catch {
       // onFavouritesChanged();
       toast.error("Unable to add this movie to favourites", {
         position: "bottom-center",

@@ -1,13 +1,11 @@
-import { NextApiRequest, NextApiResponse } from "next";
-
-import serverAuth from "@/lib/serverAuth";
+import { Movie } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 import prismadb from "../../../lib/prismadb";
 
 export async function POST(req: NextRequest) {
   try {
     const { movies } = await req.json();
-    movies.map(async (movie: any) => {
+    movies.map(async (movie: Movie) => {
       try {
         await prismadb.movie.create({
           data: movie,
@@ -26,10 +24,8 @@ export async function POST(req: NextRequest) {
   }
 }
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
-    // const body = await req.json();
-    // console.log("dd", body);
     return NextResponse.json({ message: "sdhohb" }, { status: 200 });
   } catch (e) {
     console.log("e", e);

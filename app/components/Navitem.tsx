@@ -2,11 +2,15 @@ import React from "react";
 
 interface NavItemProps {
   label: string;
-  onClick?: () => {};
+  onClick?: () => void;
 }
 
 const NavItem: React.FC<NavItemProps> = ({ label, onClick }) => {
-  return <p className="text-white text-sm">{label}</p>;
+  return (
+    <p className="text-white text-sm" onClick={onClick}>
+      {label}
+    </p>
+  );
 };
 
 export default NavItem;

@@ -2,7 +2,7 @@ import React from "react";
 
 interface MobileMenuProps {
   label: string;
-  onClick?: () => {};
+  onClick?: () => void;
 }
 
 const MobileMenuItem: React.FC<MobileMenuProps> = ({ label, onClick }) => {

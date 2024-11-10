@@ -6,13 +6,10 @@ import { AuthVariant } from "./typings";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
 export default function Auth() {
-  const router = useRouter();
-
   const nameRef = useRef<React.Reference | null>(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -52,7 +49,7 @@ export default function Auth() {
 
   const login = useCallback(async () => {
     try {
-      const res = await signIn("credentials", {
+      await signIn("credentials", {
         email: emailRef.current?.value,
         password: passwordRef.current?.value,
         callbackUrl: "/profiles",
