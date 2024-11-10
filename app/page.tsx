@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import withAuth from "./components/withAuth";
+// import withAuth from "./components/withAuth";
 import BillBoard from "./components/BillBoard";
 import AllMovieLists from "./components/AllMovieLists";
 
