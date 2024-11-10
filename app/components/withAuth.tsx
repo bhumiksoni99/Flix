@@ -13,6 +13,6 @@ export default function withAuth<P extends object>(
       redirect("/auth");
     }
 
-    return !session ? null : <WrappedComponent {...props} />;
+    return <WrappedComponent {...props} />;
   };
 }
