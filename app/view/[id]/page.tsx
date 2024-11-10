@@ -1,12 +1,11 @@
 "use client";
 import useOneMovie from "@/hooks/useOneMovie";
 import { redirect } from "next/navigation";
-import React, { use } from "react";
+import React from "react";
 import { IoArrowBack } from "react-icons/io5";
 
-export default function View({ params }) {
-  const param = use(params);
-  const { data, isLoading } = useOneMovie(param.id);
+export default function View({ params }: any) {
+  const { data, isLoading } = useOneMovie(params.id);
 
   if (isLoading) {
     return (

@@ -1,8 +1,8 @@
 import { getServerSession } from "next-auth";
 
 import prismadb from "./prismadb";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { NextRequest } from "next/server";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 
 const serverAuth = async (req: NextRequest) => {
   console.log("as", req);

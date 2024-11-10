@@ -10,9 +10,9 @@ import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
 export default function Auth() {
-  const nameRef = useRef<React.Reference | null>(null);
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+  const nameRef = useRef<HTMLInputElement | null>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
   const [variant, setVariant] = useState(AuthVariant.LOGIN);
 
   const toggleVariant = useCallback(() => {
@@ -36,8 +36,8 @@ export default function Auth() {
         position: "bottom-center",
       });
       login();
-    } catch (e) {
-      toast.error(e.response.data.error, {
+    } catch {
+      toast.error("Something went wrong!", {
         position: "bottom-center",
         style: {
           color: "#f54242",

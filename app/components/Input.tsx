@@ -1,7 +1,7 @@
-import React from "react";
+import React, { RefObject } from "react";
 
 interface InputProps {
-  ref: React.Reference;
+  ref: RefObject<HTMLInputElement>;
   type: string;
   label: string;
 }

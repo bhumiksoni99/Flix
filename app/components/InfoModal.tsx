@@ -29,7 +29,7 @@ export default function InfoModal({
 }) {
   const router = useRouter();
 
-  const { data, isLoading } = useFavourites();
+  const { data, isLoading, mutate } = useFavourites();
   if (isLoading) {
     return (
       <div className="flex flex-col h-screen text-white items-center justify-center">
@@ -56,6 +56,7 @@ export default function InfoModal({
         movieId,
       });
       toast.success("Added to your list!");
+      mutate();
     } catch {
       // onFavouritesChanged();
       toast.error("Unable to add this movie to favourites", {
@@ -95,15 +96,15 @@ export default function InfoModal({
               <p>Play</p>
             </button>
             <div
-              className="border-2 border-white items-center justify-center p-2 rounded-full ml-2"
+              className="border-2 border-white items-center justify-center p-2 rounded-full ml-2 cursor-pointer"
               onClick={() => {
                 addFavourite(movie.id);
               }}
             >
               {isFavourite(movie.id) ? (
-                <FaPlus className="text-white" />
-              ) : (
                 <FaCheck className="text-white" />
+              ) : (
+                <FaPlus className="text-white" />
               )}
             </div>
           </div>

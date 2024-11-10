@@ -17,6 +17,7 @@ const BillBoard: React.FC = () => {
       </div>
     );
   }
+
   const randomIdx = Math.floor(Math.random() * 4);
 
   const movie = data.movies[randomIdx];
@@ -47,7 +48,7 @@ const BillBoard: React.FC = () => {
               <p>Play</p>
             </button>
             <button
-              onClick={() => setVisible(true)}
+              // onClick={() => setVisible(true)}
               className="bg-gray-400 bg-opacity-60 min-w-24 px-4 text-xs lg:text-lg py-2 font-semibold flex items-center gap-2 justify-center rounded-md cursor-pointer"
             >
               <CiCircleInfo className="text-white" />

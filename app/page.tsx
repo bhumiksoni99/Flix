@@ -3,7 +3,7 @@ import withAuth from "./components/withAuth";
 import BillBoard from "./components/BillBoard";
 import AllMovieLists from "./components/AllMovieLists";
 
-async function Home() {
+function Home() {
   // const uploadMovies = async () => {
   //   try {
   //     const res = await axios.post("http://localhost:3000/api/movie-upload", {

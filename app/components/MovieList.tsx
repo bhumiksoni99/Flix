@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { FaPlay } from "react-icons/fa";
@@ -36,6 +36,7 @@ export default function MovieList({
   favs?: boolean;
   favourites?: { movies: Movie[] };
 }) {
+  const router = useRouter();
   const [movie, setMovie] = useState<Movie | null>(null);
   if (isLoading) {
     return (
@@ -96,7 +97,7 @@ export default function MovieList({
             <div className="flex flex-row">
               <div
                 className="bg-white flex items-center justify-center p-2 rounded-full"
-                onClick={() => redirect(`/view/${movie.id}`)}
+                onClick={() => router.push(`/view/${movie.id}`)}
               >
                 <FaPlay />
               </div>
