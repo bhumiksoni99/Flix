@@ -23,7 +23,7 @@ const BillBoard: React.FC = () => {
   const movie = data.movies[randomIdx];
   return (
     <>
-      <div className="relative mb-2">
+      <div className="relative mb-2 max-h-[90%]">
         <video
           poster={movie.thumbnailUrl}
           autoPlay
@@ -32,7 +32,7 @@ const BillBoard: React.FC = () => {
           src={movie.videoUrl}
           className="w-full object-cover z-0 brightness-[60%] max-h-[80vw] min-h-[80vw] md:max-h-[50vw] md:min-h-[50vw] lg:max-h-[90%] lg:min-h-[90%]"
         ></video>
-        <div className="absolute top-[20%] lg:top-[30%] left-10 z-100 overflow-none pb-60">
+        <div className="absolute top-[50%] lg:top-[30%] left-10 z-100 overflow-none pb-60">
           <p className="text-white text-lg lg:text-4xl font-bold drop-shadow-xl">
             {movie.title}
           </p>

@@ -21,9 +21,9 @@ export default function View({ params }: any) {
     <>
       <div className="absolute text-white flex flex-row gap-4 p-6 items-center z-10">
         <div className="cursor-pointer" onClick={() => redirect("/")}>
-          <IoArrowBack className="text-white text-3xl" />
+          <IoArrowBack className="text-white text-xs md:text-3xl" />
         </div>
-        <div className="flex flex-now text-2xl justify-center">
+        <div className="flex flex-now text-xs md:text-2xl justify-center">
           <p>Watching Now: </p>
           <p className="font-bold ml-2">{movie.title}</p>
         </div>
@@ -32,7 +32,7 @@ export default function View({ params }: any) {
         poster={movie.thumbnailUrl}
         autoPlay
         src={movie.videoUrl}
-        className="w-full object-cover h-screen w-screen"
+        className="w-full md:object-cover h-screen w-screen"
       ></video>
     </>
   );
